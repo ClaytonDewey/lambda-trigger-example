@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css'
 import './App.css';
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
         idToken: { payload },
       },
     } = user;
-    console.log('payload: ', payload);
+    // console.log('payload: ', payload);
     if (
       payload['cognito:groups'] &&
       payload['cognito:groups'].includes('Admin')
